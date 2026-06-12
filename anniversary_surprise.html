@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Anniversary ❤️</title>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 99%, #fecfef 100%);
+            color: #333;
+            overflow-x: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            background: rgba(255, 255, 255, 0.6);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 15px 25px rgba(0,0,0,0.1);
+            text-align: center;
+            border: 2px solid rgba(255, 255, 255, 0.8);
+            z-index: 10;
+        }
+        h1 {
+            font-family: 'Great Vibes', cursive;
+            font-size: 4em;
+            color: #d63031;
+            margin-bottom: 10px;
+        }
+        .message {
+            font-size: 1.2em;
+            line-height: 1.8;
+            margin: 20px 0;
+            color: #444;
+        }
+        .highlight {
+            color: #d63031;
+            font-weight: 600;
+        }
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 30px;
+        }
+        .gallery .frame {
+            width: 200px;
+            height: 250px;
+            background: #fff;
+            padding: 10px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transform: rotate(-3deg);
+            transition: transform 0.3s ease;
+            position: relative;
+        }
+        .gallery .frame:nth-child(even) {
+            transform: rotate(3deg);
+        }
+        .gallery .frame:hover {
+            transform: scale(1.1) rotate(0deg);
+            z-index: 100;
+        }
+        .gallery img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 5px;
+            background-color: #ffccd5; /* default placeholder color */
+        }
+        .music-player {
+            margin-top: 30px;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 10px;
+            display: inline-block;
+        }
+        .heart {
+            position: fixed;
+            top: -1vh;
+            transform: translateY(0);
+            animation: fall 10s linear infinite;
+            color: #ff4757;
+            font-size: 1.5em;
+            z-index: 1;
+            user-select: none;
+        }
+        @keyframes fall {
+            to {
+                transform: translateY(105vh);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Falling Hearts Animation Container -->
+    <div id="hearts"></div>
+
+    <div class="container">
+        <h1>Happy Anniversary!</h1>
+        <h2>Amar Future Doctor Bou 🩺❤️</h2>
+        
+        <div class="message">
+            <p>Jani ajkal tomar medical er porashonar onek chap jachhe. Tumi din-raat koto koshto korteso, ar er majhe ami na bujhe koto bokaboki kore felesi, rag kore onek kotha shuniye felesi... <br><span class="highlight">I am really sorry, amar pagli.</span></p>
+            <p>Ami jani tumi koto hard-working ar ami tomar ei journey te always tomar pashe thakte chai. Ajke amader anniversary te ami tomake just etai bolte chai je, tumi amar jiboner shobcheye boro ashirbad.</p>
+            <p>Amar rag er pichhone shudhui tomar jonno ektu obhiman chilo, karon ami tomake miss kori. Please tomar ei boka premik take khoma kore dio.</p>
+            <p>Happy Anniversary again! Tumi amar kolijar tukra! 💕</p>
+        </div>
+
+        <h3>Amader Sriti 📸</h3>
+        <p style="font-size: 0.9em; color: #888;"><i>(Ei 3ta box e tomar 3ta favorite chobi add korbe)</i></p>
+        
+        <div class="gallery">
+            <!-- Chobi 1 -->
+            <div class="frame">
+                <!-- Nicher line a src="D:\neToT\IMG_20260519_163049.jpg" er jaygay tomar chobir nam diba -->
+                <img src="D:\neToT\IMG_20260519_163049.jpg" alt="Amader Chobi 1">
+            </div>
+            <!-- Chobi 2 -->
+            <div class="frame">
+                <!-- Nicher line a src="YOUR_PHOTO_2.jpg" er jaygay tomar chobir nam diba -->
+                <img src="D:\neToT\IMG_20260519_191827.jpg" alt="Amader Chobi 2">
+            </div>
+            <!-- Chobi 3 -->
+            <div class="frame">
+                <!-- Nicher line a src="YOUR_PHOTO_3.jpg" er jaygay tomar chobir nam diba -->
+                <img src="D:\neToT\IMG_20260519_172845.jpg" alt="Amader Chobi 3">
+            </div>
+        </div>
+
+        <div class="music-player">
+            <p style="margin: 0 0 10px 0; font-weight: bold; color: #d63031;">🎵 Play Our Song 🎵</p>
+            <!-- Nicher line a src="YOUR_SONG.mp3" er jaygay ekta ganer file er nam diba -->
+            <audio controls>
+                <source src="amader_gan.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+        </div>
+    </div>
+
+    <script>
+        // Create floating hearts animation
+        function createHeart() {
+            const heart = document.createElement('div');
+            heart.classList.add('heart');
+            heart.innerText = '❤️';
+            heart.style.left = Math.random() * 100 + 'vw';
+            heart.style.animationDuration = Math.random() * 3 + 4 + 's';
+            heart.style.opacity = Math.random() * 0.5 + 0.3;
+            document.getElementById('hearts').appendChild(heart);
+            setTimeout(() => {
+                heart.remove();
+            }, 7000); // Remove heart after 7 seconds
+        }
+        setInterval(createHeart, 300);
+    </script>
+</body>
+</html>
